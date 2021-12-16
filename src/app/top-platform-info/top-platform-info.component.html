@@ -1,0 +1,11 @@
+<div class="platforms-container">
+    <div class="platforms-header">TOP PLATFORMS <i class="bi bi-question-circle" [wjTooltip]="platformTooltip" [wjTooltipPosition]="6"></i></div>
+    <div class="platforms-info">
+        <wj-flex-chart [header]="'Average Load Time'" [bindingX]="'platform'" [selectionMode]="'Point'" [itemsSource]="loadTimeData" [palette]="palette">
+            <wj-flex-chart-legend [position]="'None'"></wj-flex-chart-legend>
+            <wj-flex-chart-series [name]="'Previous Month'" [binding]="'prevMonth'"></wj-flex-chart-series>
+            <wj-flex-chart-series [name]="'Current Month'" [binding]="'curMonth'"></wj-flex-chart-series>
+        </wj-flex-chart>
+        <wj-flex-pie [header]="'Sessions by Platform'" [bindingName]="'platform'" [binding]="'sessions'" [itemsSource]="sessionData" [palette]="palette"></wj-flex-pie>
+    </div>
+</div>

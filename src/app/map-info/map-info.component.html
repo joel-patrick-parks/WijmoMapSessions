@@ -1,0 +1,5 @@
+<wj-flex-map #flexMap header="Breakdown by Country" [tooltipContent]="tooltipContent"style="height: 100%;">
+    <wj-geo-map-layer #geoLayer url="../assets/custom.geo.json" (itemsSourceChanged)="initializeMap(geoLayer)">
+      <wj-color-scale [colors]="colors" [binding]="binding" [scale]="scale"></wj-color-scale>
+    </wj-geo-map-layer>
+</wj-flex-map>

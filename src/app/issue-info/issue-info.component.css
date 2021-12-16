@@ -1,0 +1,13 @@
+.issues-container {
+    padding: 1rem;
+}
+
+.issues-header {
+    font-size: 1.05em;
+    color: gray;
+}
+
+.wj-flexgrid {
+    max-height: 480px;
+    margin-top: 10px;
+}

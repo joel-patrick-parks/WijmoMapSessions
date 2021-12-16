@@ -1,0 +1,30 @@
+.platforms-container {
+    padding: 1rem;
+}
+
+.platforms-header {
+    font-size: 1.05em;
+    color: gray;
+}
+
+.platforms-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.wj-flexchart {
+    height: 300px;
+    border: none;
+    width: 50%;
+}
+
+@media (max-width: 799px) {
+    .platforms-info {
+        flex-direction: column;
+    }
+
+    .wj-flexchart {
+        width: 100%;
+    }
+}

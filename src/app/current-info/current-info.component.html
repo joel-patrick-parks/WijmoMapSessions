@@ -1,0 +1,58 @@
+<div class="info-grid">
+    <div class="info info-session">
+        <div class="info-session-header">ACTIVE SESSIONS (NOW) <i class="bi bi-question-circle" [wjTooltip]="activeSessionTooltip" [wjTooltipPosition]="6"></i></div>
+        <div class="info-session-count">{{ activeSession.current }}</div>
+        <div class="info-session previous-day">
+            <div class="previous-day-count">
+                <div>30 DAYS AGO</div>
+                <div class="previous-day-value">{{ activeSession.previous }}</div>
+            </div>
+            <div class="previous-day-change">
+                <div class="change-right">CHANGE</div><br>
+                <div class="change-right negative"><i class="bi bi-caret-down-fill"></i>{{ activeSession.change }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="info info-time">
+        <div class="info-session-header">LOAD TIME (NOW) <i class="bi bi-question-circle" [wjTooltip]="loadTimeTooltip" [wjTooltipPosition]="6"></i></div>
+        <div class="info-session-count">{{ loadTime.current }}</div>
+        <div class="info-session previous-day">
+            <div class="previous-day-count">
+                <div>30 DAYS AGO</div>
+                <div class="previous-day-value">{{ loadTime.previous }}</div>
+            </div>
+            <div class="previous-day-change">
+                <div class="change-right">CHANGE</div><br>
+                <div class="change-right positive"><i class="bi bi-caret-up-fill"></i>{{ loadTime.change }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="info info-score">
+        <div class="info-session-header">APDEX SCORE (NOW) <i class="bi bi-question-circle" [wjTooltip]="apdexTooltip" [wjTooltipPosition]="6"></i></div>
+        <div class="info-session-count">{{ apdexScore.current }}</div>
+        <div class="info-session previous-day">
+            <div class="previous-day-count">
+                <div>30 DAYS AGO</div>
+                <div class="previous-day-value">{{ apdexScore.previous }}</div>
+            </div>
+            <div class="previous-day-change">
+                <div class="change-right">CHANGE</div><br>
+                <div class="change-right positive"><i class="bi bi-caret-up-fill"></i>{{ apdexScore.change }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="info info-rate">
+        <div class="info-session-header">BOUNCE RATE (NOW) <i class="bi bi-question-circle" [wjTooltip]="bounceRateTooltip" [wjTooltipPosition]="6"></i></div>
+        <div class="info-session-count">{{ bounceRate.current }}</div>
+        <div class="info-session previous-day">
+            <div class="previous-day-count">
+                <div>30 DAYS AGO</div>
+                <div class="previous-day-value">{{ bounceRate.previous }}</div>
+            </div>
+            <div class="previous-day-change">
+                <div class="change-right">CHANGE</div><br>
+                <div class="change-right negative"><i class="bi bi-caret-down-fill"></i>{{ bounceRate.change }}</div>
+            </div>
+        </div>
+    </div>
+</div>

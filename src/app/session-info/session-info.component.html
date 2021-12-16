@@ -1,0 +1,36 @@
+<div class="sessions-container">
+    <div class="sessions-info">
+        <div class="session-header">SESSIONS <i class="bi bi-question-circle" [wjTooltip]="sessionTooltip" [wjTooltipPosition]="6"></i></div>
+    </div>
+    <div class="sessions-info">
+        <div class="session-total">
+            <div class="session-total-value">
+                {{ totalSessions }}
+            </div>
+            <div class="session-total-annotation">
+                IN TOTAL
+            </div>
+        </div>
+        <wj-flex-pie class="session-chart" [itemsSource]="data" [bindingName]="'sessions'" [binding]="'number'" [innerRadius]="0.85" [palette]="['rgba(50, 50, 255, 1)', 'rgb(0, 200, 200, 1)']" style="margin-left: auto; margin-right: auto;">
+            <wj-flex-chart-legend [position]="'None'"></wj-flex-chart-legend>
+        </wj-flex-pie>
+    </div>
+    <div class="sessions-info sessions-breakdown">
+        <div style="display: flex; justify-content: space-between">
+            <div>NEW</div><div>RETURNING</div>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+            <div class="session-value-bg">{{data[0].number}}</div><div class="session-value-bg">{{ data[1].number }}</div>
+        </div>
+        <hr>
+        <div>AVERAGE PAGEVIEWS/SESSION</div>
+        <div style="display: flex; justify-content: space-between">
+            <div class="session-value-bg">{{ pageViews.value }}</div><div class="session-value-sm"><i class="bi bi-caret-up-fill positive"></i>{{ pageViews.change }}</div>
+        </div>
+        <hr>
+        <div>AVERAGE SESSION DURATION</div>
+        <div style="display: flex; justify-content: space-between">
+            <div class="session-value-bg">{{ sessions.value }}</div><div class="session-value-sm"><i class="bi bi-caret-up-fill positive"></i>{{ sessions.change }}</div>
+        </div>
+    </div>
+</div>

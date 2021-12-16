@@ -1,0 +1,30 @@
+.browsers-container {
+    padding: 1rem;
+}
+
+.browsers-header {
+    font-size: 1.05em;
+    color: gray;
+}
+
+.browsers-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.wj-flexchart {
+    height: 300px;
+    border: none;
+    width: 50%;
+}
+
+@media (max-width: 799px) {
+    .browsers-info {
+        flex-direction: column;
+    }
+
+    .wj-flexchart {
+        width: 100%;
+    }
+}

@@ -1,0 +1,14 @@
+<div class="issues-container">
+    <div class="issues-header">ISSUES REPORTED <i class="bi bi-question-circle" [wjTooltip]="issuesTooltip" [wjTooltipPosition]="6"></i></div>
+    <wj-flex-grid #issueGrid [itemsSource]="selectedCountryData" [isReadOnly]="true" [selectionMode]="'Row'" [headersVisibility]="'Column'" [lazyRender]="false" (initialized)="initializedGrid(issueGrid)">
+        <wj-flex-grid-column binding="country" header="Country" [width]="'*'"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="issue" header="Issue" [width]="'*'"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="status" header="Status" [width]="'*'">
+            <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                <span *ngIf="cell.item.status == 'High'" class="badge bg-danger">{{ cell.item.status }}</span>
+                <span *ngIf="cell.item.status == 'Moderate'" class="badge bg-warning text-dark">{{ cell.item.status }}</span>
+                <span *ngIf="cell.item.status == 'Low'" class="badge bg-info text-dark">{{ cell.item.status }}</span>
+            </ng-template>
+        </wj-flex-grid-column>
+    </wj-flex-grid>
+</div>

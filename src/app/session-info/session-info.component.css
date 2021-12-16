@@ -1,0 +1,54 @@
+.sessions-container {
+    padding: 1rem;
+}
+
+.session-header {
+    font-size: 1.05em;
+    color: gray;
+}
+
+.sessions-info {
+    position: relative;
+}
+
+.session-chart {
+    border: none;
+    height: 200px;
+    width: 200px;
+}
+
+.session-total {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.session-total-value {
+    font-size: 2em;
+}
+
+.session-total-annotation {
+    font-size: 1em;
+    font-weight: 600;
+    color: gray;
+}
+
+.sessions-breakdown {
+    color: gray;
+}
+
+.session-value-bg {
+    color: black;
+    font-weight: 500;
+    font-size: 1.75rem;
+}
+
+.session-value-sm {
+    padding-top: 0.75em;
+}
+
+.positive {
+    color: green;
+}

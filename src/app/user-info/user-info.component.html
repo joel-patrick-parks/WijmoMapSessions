@@ -1,0 +1,29 @@
+<div class="users-container">
+    <div class="users-header">RECENT USERS <i class="bi bi-question-circle" [wjTooltip]="usersTooltip" [wjTooltipPosition]="6"></i></div>
+    <wj-flex-grid [itemsSource]="selectedCountryData" [isReadOnly]="true" [selectionMode]="'Row'" [headersVisibility]="'Column'">
+        <wj-flex-grid-column binding="country" header="Country" [width]="'*'"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="sessionDuration" header="Session Duration"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="ipAddress" header="IP Address"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="platform" header="Platform">
+            <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                <i *ngIf="cell.item.platform == 'Desktop'" class="bi bi-display-fill"></i>
+                <i *ngIf="cell.item.platform == 'Mobile'" class="bi bi-phone-fill"></i>
+                <i *ngIf="cell.item.platform == 'Tablet'" class="bi bi-tablet-landscape-fill"></i>
+                <i *ngIf="cell.item.platform == 'Other'" class="bi bi-terminal-fill"></i>
+                {{cell.item.platform}}
+            </ng-template>
+        </wj-flex-grid-column>
+        <wj-flex-grid-column binding="browser" header="Browser">
+            <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                <img *ngIf="cell.item.browser == 'Chrome'" src="../../assets/chrome.png" alt="" height="16">
+                <img *ngIf="cell.item.browser == 'Firefox'" src="../../assets/firefox.png" alt="" height="16">
+                <img *ngIf="cell.item.browser == 'Edge'" src="../../assets/edge.png" alt="" height="16">
+                <img *ngIf="cell.item.browser == 'Safari'" src="../../assets/safari.png" alt="" height="16">
+                <i *ngIf="cell.item.browser == 'Other'" class="bi bi-cloud-fill"></i>
+                {{cell.item.browser}}
+            </ng-template>
+        </wj-flex-grid-column>
+    </wj-flex-grid>
+    <br>
+    <wj-collection-view-navigator headerFormat="Page {currentPage:n0} of {pageCount:n0}" [byPage]="true" [cv]="selectedCountryData"> </wj-collection-view-navigator>
+</div>
