@@ -17,8 +17,11 @@ export class MapInfoComponent implements OnInit {
   pageViewMap = new Map();
   issuesReportedMap = new Map();
   colors = Palettes.Diverging.RdYlGn;
+  //colors = ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"];
+  // countries = ["Denmark", "Poland", "Ukraine", "Peru", "Australia", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
   binding = (o: any) => this.dataMap.get(o.properties.name);
   scale = (v: number) => 1 - v;
+  tooltipContent = (f: any) => this.getCountryToolTip(f);
 
   constructor(private dataService: DataService){}
   
@@ -51,7 +54,4 @@ export class MapInfoComponent implements OnInit {
     }
     return `<b>` + val.name + `</b><br>` + 'No data available';
   }
-
-  tooltipContent = (f: any) => this.getCountryToolTip(f);
-
 }

@@ -9,7 +9,7 @@ export class DataService {
     { "Country": "Canada", "AverageResponseTime": "1.4250", "PageViews": "12.7k", "IssuesReported": "35" },
     { "Country": "Mexico", "AverageResponseTime": "1.5500", "PageViews": "4.2k", "IssuesReported": "24" },
     { "Country": "Brazil", "AverageResponseTime": "2.6505", "PageViews": "1.3k", "IssuesReported": "7" },
-    { "Country": "Peru", "AverageResponseTime": "3.2500", "PageViews": "0.8k", "IssuesReported": "2" },
+    { "Country": "Peru", "AverageResponseTime": "3.2400", "PageViews": "0.8k", "IssuesReported": "2" },
     { "Country": "United Kingdom", "AverageResponseTime": "1.7500", "PageViews": "7.9k", "IssuesReported": "29" },
     { "Country": "France", "AverageResponseTime": "1.9000", "PageViews": "3.4k", "IssuesReported": "19" },
     { "Country": "Germany", "AverageResponseTime": "2.1000", "PageViews": "5.6k", "IssuesReported": "15" },

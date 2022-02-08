@@ -16,17 +16,7 @@ export class TopCountryInfoComponent implements OnInit {
     { name: 'Germany', visits: 5.9, percentage: 5.3 },
     { name: 'Mexico', visits: 4.2, percentage: 3.8 },
     { name: 'France', visits: 3.4, percentage: 3.1 },
-    { name: 'Ukraine', visits: 3.1, percentage: 2.8 },
-    // { name: 'Australia', visits: 2.4, percentage: 2.2 },
-    // { name: 'Spain', visits: 2.3, percentage: 2.1 },
-    // { name: 'Norway', visits: 2.1, percentage: 1.9 },
-    // { name: 'Italy', visits: 1.9, percentage: 1.7 },
-    // { name: 'Denmark', visits: 1.8, percentage: 1.6 },
-    // { name: 'Brazil', visits: 1.3, percentage: 1.2 },
-    // { name: 'Finland', visits: 1.1, percentage: 1.0 },
-    // { name: 'Netherlands', visits: 0.9, percentage: 0.8 },
-    // { name: 'Peru', visits: 0.8, percentage: 0.7 },
-    // { name: 'Poland', visits: 0.3, percentage: 0.3 },
+    { name: 'Ukraine', visits: 3.1, percentage: 2.8 }
   ];
   maxVisits = 21.9;
   countrySessionTooltip = 'Displays the top 10 countries by # of sessions.';
