@@ -20,12 +20,35 @@ export class DataService {
     { "Country": "Denmark", "AverageResponseTime": "3.5025", "PageViews": "1.8k", "IssuesReported": "9" },
     { "Country": "Norway", "AverageResponseTime": "2.7500", "PageViews": "2.1k", "IssuesReported": "14" },
     { "Country": "Poland", "AverageResponseTime": "3.4000", "PageViews": "0.3k", "IssuesReported": "3" },
-    { "Country": "Russia", "AverageResponseTime": "2.2500", "PageViews": "5.9k", "IssuesReported": "11" },
+    { "Country": "Russia", "AverageResponseTime": "2.2250", "PageViews": "5.9k", "IssuesReported": "11" },
     { "Country": "Ukraine", "AverageResponseTime": "3.2500", "PageViews": "3.1k", "IssuesReported": "8" },
     { "Country": "China", "AverageResponseTime": "2.7000", "PageViews": "11.3k", "IssuesReported": "18" },
     { "Country": "Japan", "AverageResponseTime": "2.3000", "PageViews": "13.8k", "IssuesReported": "17" },
     { "Country": "Australia", "AverageResponseTime": "3.1000", "PageViews": "2.4k", "IssuesReported": "7" },
   ];
+
+  paletteArray = [
+    ["#188d9b", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#188d9b", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#188d9b", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#188d9b", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#188d9b", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#188d9b", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#188d9b", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#188d9b", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#188d9b", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#188d9b", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#188d9b", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#188d9b", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#188d9b", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#188d9b", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#188d9b", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#188d9b", "#33cc33", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#188d9b", "#009900", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#188d9b", "#009933", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#188d9b", "#006600"],
+    ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#188d9b"]
+  ]
 
   reportedIssues = [
     { country: 'United States', issuesReported: 72 },
@@ -89,6 +112,10 @@ export class DataService {
 
   getCountryData() {
     return this.countryData;
+  }
+
+  getPaletteArray(val: number) {
+    return this.paletteArray[val];
   }
 
   getSessionData() {
