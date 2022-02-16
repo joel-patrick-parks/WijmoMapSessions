@@ -17,14 +17,11 @@ export class MapInfoComponent implements OnInit {
   dataMap = new Map();
   pageViewMap = new Map();
   issuesReportedMap = new Map();
-  //colors = Palettes.Diverging.RdYlGn;
-  colors = ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"];
-  //colorsCopy = ["#800000", "#990000", "#ff0000", "#ff3300", "#cc6600", "#ff9900", "#ff9933", "#ffcc00", "#ffcc66", "#ffffcc", "#ffff99", "#ccff66", "#ccff33", "#99cc00", "#99ff33", "#66ff33", "#33cc33", "#009900", "#009933", "#006600"];
-  countries = ["Denmark", "Poland", "Ukraine", "Peru", "Australia", "Norway", "China", "Brazil", "Italy", "Japan", "Spain", "Russia", "Germany", "Finland", "Netherlands", "France", "United Kingdom", "Mexico", "Canada", "United States"];
-  prevColor = '';
-  tempColor = '';
+  colors = Palettes.Diverging.RdYlGn;
   selectedColor = '#188d9b';
   selectedCountry = '';
+  selectedID: any;
+  hitTestInfo: any;
   binding = (o: any) => this.dataMap.get(o.properties.name);
   scale = (v: number) => 1 - v;
   tooltipContent = (f: any) => this.getCountryToolTip(f);
@@ -43,11 +40,29 @@ export class MapInfoComponent implements OnInit {
   initializeMap(layer: any) {
     this.flexMap.zoomTo(layer.getGeoBBox());
     this.flexMap.hostElement.addEventListener('mousedown', (e) => {
-      var hitTestInfo = this.flexMap.hitTest(e);
-      if(hitTestInfo._item !== undefined) {
-        this.emitCountryName(hitTestInfo._item.name);
-        this.setColor(hitTestInfo._item.name);
+      this.hitTestInfo = this.flexMap.hitTest(e);
+      if(this.hitTestInfo._item !== undefined) {
+        this.emitCountryName(this.hitTestInfo._item.name);
+        let el = document.elementFromPoint(e.x, e.y);
+        let id = el ? el.getAttribute('wj-map:id') : undefined;
+        this.selectedID = id;
         this.flexMap.invalidate(true);
+      }
+    });
+    this.flexMap.rendered.addHandler((s, a) => {
+      const layer = this.flexMap.layers[0];
+      const g = layer._g;
+      if(g && this.selectedID && this.validCountry(this.hitTestInfo._item.name)) {
+        let list = [];
+        for(let i = 0; i < g.childNodes.length; i++) {
+          const node = g.childNodes[i];
+          let id = node.getAttribute('wj-map:id');
+          if(id === this.selectedID) {
+            node.setAttribute('fill', this.selectedColor);
+            list.push(node);
+          }
+        }
+        list.forEach((el) => el.parentNode.appendChild(el));
       }
     });
   }
@@ -63,44 +78,13 @@ export class MapInfoComponent implements OnInit {
     return `<b>` + val.name + `</b><br>` + 'No data available';
   }
 
-  setColor(country: string) {
-    for(var i = 0; i < this.countries.length; i++) {
-      if(country == this.countries[i]) {
-        this.colors = this.dataService.getPaletteArray(i);
-        console.log(this.colors);
+  validCountry(value: string) {
+    for(var i = 0; i < this.flexMapData.length; i++) {
+      if(this.flexMapData[i].Country == value) {
+        return true;
       }
     }
-    // var colorsCopy = [];
-    // for(var i = 0; i < this.colors.length; i++) {
-    //   colorsCopy.push(this.colors[i]);
-    // }
-    // if(this.selectedCountry == '') {
-    //   this.selectedCountry = country;
-    //   for(var i = 0; i < this.countries.length; i++) {
-    //     if(this.selectedCountry == this.countries[i]) {
-    //       this.prevColor = this.colors[i];
-    //       colorsCopy[i] = this.selectedColor;
-    //       this.colors = colorsCopy;
-    //       break;
-    //     }
-    //   }
-    // } else {
-    //   for(var i = 0; i < this.countries.length; i++) {
-    //     if(this.selectedCountry == this.countries[i]) {
-    //       colorsCopy[i] = this.prevColor;
-    //       break;
-    //     }
-    //   }
-    //   this.selectedCountry = country;
-    //   for(var i = 0; i < this.countries.length; i++) {
-    //     if(this.selectedCountry == this.countries[i]) {
-    //       this.prevColor = this.colors[i];
-    //       colorsCopy[i] = this.selectedColor;
-    //       this.colors = colorsCopy;
-    //       console.log(this.colors);
-    //       break;
-    //     }
-    //   }
-    // }
+    return false;
   }
+
 }

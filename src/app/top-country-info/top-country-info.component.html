@@ -9,6 +9,7 @@
             <div>Percentage: {{ country.percentage }}%</div>
             <div class="country-subtotal-gauge">
                 <wj-linear-gauge #theGauge [isReadOnly]="true" [min]="0" [max]="maxVisits" [value]="country.visits" [showRanges]="false">
+                    <wj-range [wjProperty]="'pointer'" [color]="'#0868ac'"></wj-range>
                 </wj-linear-gauge>
             </div>
         </div>

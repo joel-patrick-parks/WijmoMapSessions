@@ -12,7 +12,8 @@ export class TopPlatformInfoComponent implements OnInit {
   loadTimeData: any[];
   sessionData: any[];
   platformTooltip = 'Breakdown of sessions by platform.';
-  palette = wjChart.Palettes.darkly;
+  piePalette = ['#a8ddb5', '#7bccc4', '#4eb3d3', '#2b8cbe', '#0868ac'];
+  chartPalette = ['#2b8cbe', '#0868ac'];
 
   constructor(private dataService: DataService) {
     this.loadTimeData = dataService.getPlatformLoadTimeData();
